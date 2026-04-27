@@ -1,0 +1,850 @@
+/* Telecom Architect Plugin Styles */
+
+.telecom-modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.telecom-modal {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+.telecom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.telecom-modal-header h2 {
+    margin: 0;
+}
+.telecom-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+.telecom-form-group {
+    margin-bottom: 16px;
+}
+.telecom-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.telecom-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+}
+.telecom-field-hint {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+}
+.telecom-btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+.telecom-btn-primary {
+    background: #0073aa;
+    color: #fff;
+}
+.telecom-btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+    margin-left: 10px;
+}
+.telecom-modal-footer {
+    margin-top: 20px;
+}
+.telecom-error-msg {
+    color: #cc0000;
+    font-size: 14px;
+    margin-top: 8px;
+}
+.telecom-spinner {
+    width: 40px; height: 40px;
+    border: 4px solid #f0f0f0;
+    border-top-color: #0073aa;
+    border-radius: 50%;
+    animation: telecom-spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+}
+@keyframes telecom-spin {
+    to { transform: rotate(360deg); }
+}
+.telecom-provisioning-status {
+    text-align: center;
+    padding: 20px 0;
+}
+.telecom-provision-progress {
+    background: #f0f0f0;
+    border-radius: 4px;
+    height: 8px;
+    margin-top: 16px;
+    overflow: hidden;
+}
+.telecom-provision-progress-bar {
+    height: 100%;
+    background: #0073aa;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+.telecom-success-msg {
+    text-align: center;
+    padding: 20px 0;
+}
+.telecom-success-icon {
+    font-size: 48px;
+    color: #46b450;
+    display: block;
+}
+.telecom-stub {
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}
+.telecom-chat-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.telecom-chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f9f9f9;
+}
+.telecom-chat-message {
+    margin-bottom: 16px;
+}
+.telecom-chat-message strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #555;
+}
+.telecom-chat-message p {
+    margin: 0;
+    line-height: 1.6;
+}
+.telecom-chat-message.user p {
+    background: #0073aa;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: inline-block;
+}
+.telecom-chat-message.assistant p {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: inline-block;
+}
+.telecom-chat-input-row {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    gap: 10px;
+}
+.telecom-chat-input-row textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    font-size: 14px;
+}
+.telecom-chat-error {
+    color: #cc0000;
+    font-size: 13px;
+    padding: 8px 12px;
+    background: #fff0f0;
+    border-top: 1px solid #ffcccc;
+}
+
+/* ============================================================
+   Project List — [telecom_project_list]
+   ============================================================ */
+
+.telecom-project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 900px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Stats row */
+.tl-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tl-stat-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+.tl-stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+.tl-stat-value {
+    font-size: 22px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* Filter tabs */
+.tl-filter-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+.tl-filter-tab {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #e0e0e0;
+    color: #666;
+    background: transparent;
+    transition: all 0.15s;
+}
+.tl-filter-tab.active,
+.tl-filter-tab:hover {
+    background: #fff;
+    color: #111;
+    border-color: #aaa;
+}
+
+/* Cards */
+.tl-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tl-project-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    border-left: 4px solid #ccc;
+    padding: 16px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: box-shadow 0.15s;
+}
+.tl-project-card:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Status border colors */
+.tl-card-provisioning { border-left-color: #f59e0b; }
+.tl-card-active       { border-left-color: #0073aa; }
+.tl-card-complete     { border-left-color: #22c55e; }
+.tl-card-failed       { border-left-color: #ef4444; }
+.tl-card-archived     { border-left-color: #9ca3af; }
+
+.tl-project-card-header {
+    margin-bottom: 12px;
+}
+.tl-project-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+}
+.tl-project-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.3;
+}
+.tl-project-meta {
+    margin: 0;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Status badges */
+.tl-badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tl-badge-provisioning { background: #fef3c7; color: #92400e; }
+.tl-badge-active       { background: #dbeafe; color: #1e40af; }
+.tl-badge-complete     { background: #dcfce7; color: #166534; }
+.tl-badge-failed       { background: #fee2e2; color: #991b1b; }
+.tl-badge-archived     { background: #f3f4f6; color: #4b5563; }
+
+/* Progress */
+.tl-progress-section {
+    margin-bottom: 14px;
+}
+.tl-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+}
+.tl-progress-label strong {
+    font-weight: 500;
+    color: #111;
+}
+.tl-progress-bar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+    height: 7px;
+    overflow: hidden;
+}
+.tl-progress-bar-fill {
+    height: 100%;
+    background: #0073aa;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+.tl-card-complete .tl-progress-bar-fill {
+    background: #22c55e;
+}
+
+/* Action buttons */
+.tl-project-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.tl-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none !important;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s, background 0.15s;
+    line-height: 1.5;
+}
+.tl-btn:hover { opacity: 0.88; }
+.tl-btn-primary   { background: #0f1f3d; color: #fff !important; }
+.tl-btn-secondary { background: #f3f4f6; color: #374151 !important; border: 1px solid #e5e7eb; }
+
+/* Provisioning + failed notices */
+.tl-provisioning-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #92400e;
+    background: #fef3c7;
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+.tl-failed-notice {
+    font-size: 13px;
+    color: #991b1b;
+    background: #fee2e2;
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+.tl-spinner-small {
+    width: 13px;
+    height: 13px;
+    border: 2px solid #fde68a;
+    border-top-color: #92400e;
+    border-radius: 50%;
+    animation: telecom-spin 0.8s linear infinite;
+    flex-shrink: 0;
+}
+
+.telecom-empty-state {
+    padding: 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px dashed #e0e0e0;
+    border-radius: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* ============================================================
+   Project Map — [telecom_project_map]
+   ============================================================ */
+
+.tl-map-wrapper {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.tl-map-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+    flex-wrap: wrap;
+}
+
+.tl-map-legend {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #555;
+    gap: 6px;
+}
+
+.tl-legend-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.tl-legend-complete { background: #22c55e; border: 1.5px solid #16a34a; }
+.tl-legend-pending  { background: #ef4444; border: 1.5px solid #dc2626; }
+
+.tl-map-stats {
+    font-size: 12px;
+    color: #666;
+    margin-left: auto;
+}
+
+.tl-btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.tl-map-canvas {
+    width: 100%;
+    height: 520px;
+}
+
+.tl-map-error {
+    padding: 16px;
+    background: #fee2e2;
+    color: #991b1b;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Info window popup */
+.tl-map-popup {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    min-width: 180px;
+    max-width: 240px;
+}
+
+.tl-map-popup strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.tl-map-popup-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+.tl-map-popup-complete { background: #dcfce7; color: #166534; }
+.tl-map-popup-pending  { background: #fee2e2; color: #991b1b; }
+
+.tl-map-popup-row {
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.tl-map-popup-row a {
+    color: #0073aa;
+    text-decoration: none;
+}
+.tl-map-popup-row a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   User Management — Registration, Workers, Invites
+   ============================================================ */
+
+/* Registration */
+.tq-register-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.tq-register-box {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 580px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.tq-register-box h2 {
+    margin: 0 0 24px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0f1f3d;
+}
+.tq-role-picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+}
+.tq-role-option {
+    cursor: pointer;
+}
+.tq-role-option input[type="radio"] {
+    display: none;
+}
+.tq-role-card {
+    display: block;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: all 0.15s;
+}
+.tq-role-card strong {
+    display: block;
+    font-size: 14px;
+    color: #111;
+    margin-bottom: 4px;
+}
+.tq-role-card small {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.4;
+}
+.tq-role-option input:checked + .tq-role-card {
+    border-color: #0073aa;
+    background: #f0f7ff;
+}
+.tq-role-option:hover .tq-role-card {
+    border-color: #aaa;
+}
+
+/* Form elements */
+.tq-form-group {
+    margin-bottom: 14px;
+}
+.tq-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 5px;
+}
+.tq-form-group input[type="text"],
+.tq-form-group input[type="email"],
+.tq-form-group input[type="password"],
+.tq-form-group input[type="number"] {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.15s;
+}
+.tq-form-group input:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 3px rgba(0,115,170,0.1);
+}
+.tq-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.tq-form-group-btn {
+    display: flex;
+    align-items: flex-end;
+}
+.tq-submit-btn {
+    width: 100%;
+    padding: 11px;
+    font-size: 15px;
+    margin-top: 8px;
+}
+.tq-login-link {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-top: 16px;
+}
+
+/* Alerts */
+.tq-alert {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+.tq-alert-error   { background: #fee2e2; color: #991b1b; }
+.tq-alert-success { background: #dcfce7; color: #166534; }
+
+/* Tables */
+.tq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+.tq-table th {
+    text-align: left;
+    padding: 8px 12px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 500;
+    color: #555;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.tq-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #333;
+    vertical-align: middle;
+}
+.tq-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Worker manager */
+.tq-worker-manager,
+.tq-invite-section,
+.tq-assign-workers {
+    max-width: 760px;
+}
+.tq-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.tq-section-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f1f3d;
+}
+.tq-add-worker-form {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+.tq-add-worker-form h4,
+.tq-invite-section h4,
+.tq-assign-workers h4 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+.tq-empty {
+    color: #888;
+    font-size: 13px;
+    padding: 20px 0;
+}
+.tq-member-list {
+    margin-top: 20px;
+}
+.tq-member-list h5 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.tq-invite-form .tq-form-row {
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+}
+
+@media (max-width: 600px) {
+    .tq-form-row { grid-template-columns: 1fr; }
+    .tq-role-picker { grid-template-columns: 1fr; }
+    .tq-register-box { padding: 24px 20px; }
+}
+
+/* ============================================================
+   Company Pills + Invite Button + Splice Dates
+   ============================================================ */
+
+.tl-company-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+
+.tl-company-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.tl-pill-accepted {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.tl-pill-pending {
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+.tl-pill-invite {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px dashed #0073aa;
+    color: #0073aa;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.tl-pill-invite:hover {
+    background: #f0f7ff;
+}
+
+/* Splice dates */
+.tl-splice-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 14px;
+}
+
+.tl-splice-dates span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tl-duration {
+    font-weight: 500;
+    color: #0f1f3d;
+}
+
+/* Project page top bar */
+.tq-project-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+/* Project summary bottom */
+.tq-project-summary {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 30px;
+}
+
+.tq-project-summary h4 {
+    margin: 0 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tq-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.tq-summary-item {
+    font-size: 13px;
+}
+
+.tq-summary-label {
+    color: #888;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 3px;
+}
+
+.tq-summary-value {
+    color: #111;
+    font-weight: 500;
+}
